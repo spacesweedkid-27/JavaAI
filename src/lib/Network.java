@@ -27,7 +27,6 @@ public class Network {
         }
     }
 
-    // Easy function to display a net
 
     public void displayStructure(){
         for (int i = 0; i < net.length; i++){
