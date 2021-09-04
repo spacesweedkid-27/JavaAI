@@ -16,6 +16,11 @@ public class Main {
                     }
 
                     @Override
+                    public float[] weights() {
+                        return new float[3];
+                    }
+
+                    @Override
                     public float bias() {
                         return 1;
                     }
@@ -24,12 +29,13 @@ public class Main {
                     public float threshold() {
                         return 4;
                     }
+
+
                 }
 
         };
 
-        for (int i = 0; i < 10; i+=1){
-        }
+
 
         System.out.println(neuron[0].weights()[0]);
 
