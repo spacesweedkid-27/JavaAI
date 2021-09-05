@@ -7,7 +7,7 @@ public class Neuron {
 
     public float function(float input){return input+bias;}
 
-    public void setWeights(float[] neWeights){weights = neWeights;}
+    public void setWeights(float[] newWeights){weights = newWeights;}
     public float[] getWeights(){return weights;}
 
     public void setBias(float newBias){bias = newBias;}

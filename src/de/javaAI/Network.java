@@ -12,8 +12,6 @@ public class Network {
             if (Max < map[i].length) Max = i;
         }
 
-        System.out.println(Max);
-
         // Setting the Neuron[][] net to these bounds
 
         this.net = new Neuron[map.length][map[Max].length];
@@ -28,12 +26,7 @@ public class Network {
     }
 
     public void run(float in){
-        float temp = 0;
-        for (int i = 0; i < net.length; i++){
-            run(in);
-        }
 
-        System.out.println(net[net.length-1][0].function(in));
     }
 
 

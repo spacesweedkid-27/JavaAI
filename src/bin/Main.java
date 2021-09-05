@@ -12,22 +12,42 @@ public class Main {
                 new Neuron() {
                     @Override
                     public float function(float input) {
-                        return (float) Math.pow(input + getBias(), 2);
+                        return (float) Math.pow(input + getBias(), 1.2);
                     }
                 },
                 new Neuron() {
                     @Override
                     public float function(float input) {
-                        return (float) Math.pow(input + getBias(), 2);
+                        return (float) Math.pow(input + getBias(), 1.1);
+                    }
+                },
+                new Neuron() {
+                    @Override
+                    public float function(float input) {
+                        return (float) Math.pow(input + getBias(), 1.1);
+                    }
+                },
+                new Neuron() {
+                    @Override
+                    public float function(float input) {
+                        return (float) Math.pow(input + getBias(), 1.1);
                     }
                 }
 
         };
 
-        neurons[0].setBias(1);
-        neurons[1].setBias(2);
+        neurons[3].setWeights(new float[]{1,1});
+        neurons[2].setWeights(new float[]{1});
+        neurons[1].setWeights(new float[]{1});
 
-        Network network = new Network(neurons,new int[][]{{0,1},{1,1,1},{0},{1,1,1},{0}});
+
+
+        Network network = new Network(neurons,new int[][]{{0},{1,2},{3}}){
+            @Override
+            public void run(float in){
+                System.out.println(neurons[3].function(neurons[3].getWeights()[0]*neurons[1].function(neurons[1].getWeights()[0]*neurons[0].function(in))+neurons[3].getWeights()[1]*neurons[2].function(neurons[2].getWeights()[0]*neurons[0].function(in))));
+            }
+        };
 
         network.displayStructure();
 
