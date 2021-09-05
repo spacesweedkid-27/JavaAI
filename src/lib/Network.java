@@ -27,6 +27,13 @@ public class Network {
         }
     }
 
+    public float run(){
+        net[net.length-1][0].function(0);
+
+
+        return 0;
+    }
+
 
     public void displayStructure(){
         for (int i = 0; i < net.length; i++){
