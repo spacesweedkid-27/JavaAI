@@ -1,4 +1,4 @@
-package lib;
+package de.javaAI;
 
 public class Neuron {
     private float bias;

@@ -1,7 +1,6 @@
 package bin;
 
-import lib.Network;
-import lib.Neuron;
+import de.javaAI.Neuron;
 
 public class Main {
     public static void main(String[]args){

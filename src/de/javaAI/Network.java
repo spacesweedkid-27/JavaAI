@@ -1,4 +1,4 @@
-package lib;
+package de.javaAI;
 
 public class Network {
     private final Neuron[][] net;
