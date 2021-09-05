@@ -1,12 +1,13 @@
 package bin;
 
+import de.javaAI.Network;
 import de.javaAI.Neuron;
 
 public class Main {
     public static void main(String[]args){
 
 
-        Neuron neurons[] = {
+        Neuron[] neurons = {
 
                 new Neuron() {
                     @Override
@@ -25,9 +26,11 @@ public class Main {
 
         neurons[0].setBias(1);
         neurons[1].setBias(2);
-        System.out.println(neurons[0].function(1));
-        System.out.println(neurons[1].function(1));
 
+        Network network = new Network(neurons,new int[][]{{0,1},{1,1,1},{0},{1,1,1},{0}});
 
+        network.displayStructure();
+
+        network.run(2);
     }
 }

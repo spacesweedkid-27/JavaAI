@@ -16,7 +16,7 @@ public class Network {
 
         // Setting the Neuron[][] net to these bounds
 
-        this.net = new Neuron[map.length][map[Max-1].length];
+        this.net = new Neuron[map.length][map[Max].length];
 
         // Mapping the neurons to the map
 
@@ -27,18 +27,21 @@ public class Network {
         }
     }
 
-    public float run(){
-        net[net.length-1][0].function(0);
+    public void run(float in){
+        float temp = 0;
+        for (int i = 0; i < net.length; i++){
+            run(in);
+        }
 
-
-        return 0;
+        System.out.println(net[net.length-1][0].function(in));
     }
 
 
     public void displayStructure(){
         for (int i = 0; i < net.length; i++){
             for (int j = 0; j < net[i].length; j++){
-                System.out.print(net[i][j]+ " ");
+                if (net[i][j]!=null)
+                System.out.print("N"+i+" "+j+ "\t");
             }
             System.out.println();
         }
